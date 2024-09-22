@@ -10,39 +10,34 @@ class CustomGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        print("hi");
-      },
-      child: GridView.count(
-        crossAxisCount: 3,
-        children: const [
-          CustomCard(
-            title: "Tasbih",
-            image: AssetsData.tsbeha,
-          ),
-          CustomCard(
-            title: "Hadith",
-            image: AssetsData.hadith,
-          ),
-          CustomCard(
-            title: "Doa",
-            image: AssetsData.doa,
-          ),
-          CustomCard(
-            title: "Qu'ran",
-            image: AssetsData.quran,
-          ),
-          CustomCard(
-            title: "Wallpaper",
-            image: AssetsData.wallpaper,
-          ),
-          CustomCard(
-            title: "Donations",
-            image: AssetsData.donations,
-          ),
-        ],
-      ),
+    return GridView.count(
+      crossAxisCount: 3,
+      children: const [
+        CustomCard(
+          title: "Tasbih",
+          image: AssetsData.tsbeha,
+        ),
+        CustomCard(
+          title: "Hadith",
+          image: AssetsData.hadith,
+        ),
+        CustomCard(
+          title: "Doa",
+          image: AssetsData.doa,
+        ),
+        CustomCard(
+          title: "Qu'ran",
+          image: AssetsData.quran,
+        ),
+        CustomCard(
+          title: "Wallpaper",
+          image: AssetsData.wallpaper,
+        ),
+        CustomCard(
+          title: "Donations",
+          image: AssetsData.donations,
+        ),
+      ],
     );
   }
 }
