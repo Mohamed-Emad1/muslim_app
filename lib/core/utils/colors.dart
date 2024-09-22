@@ -5,5 +5,6 @@ abstract class ColorsStyles {
   static const Color white = Color(0xffFFFFFF);
   static const Color homeBackGround = Color(0xff1A4A4C);
   static const Color goldenColor = Color(0xffF6AF58);
+  static const Color buttonColor = Color(0xff1C5153);
   
 }
