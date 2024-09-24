@@ -34,11 +34,17 @@ class _MainTasbihBodyState extends State<MainTasbihBody> {
           ),
         ),
         const SizedBox(
-          height: 24,
+          height: 12,
         ),
-        Image.asset(AssetsData.hmed),
+        SizedBox(
+          height: 100,
+          child: Image.asset(
+            AssetsData.fourthThekr,
+            fit: BoxFit.fill,
+          ),
+        ),
         const SizedBox(
-          height: 108,
+          height: 40,
         ),
         const Text(
           "Tasbih Counter",
