@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../core/utils/colors.dart';
+import '../../../../../core/utils/functions/go_to_page_by_navigationBTN.dart';
 
 class CustomNavigationButton extends StatefulWidget {
   const CustomNavigationButton({super.key});
@@ -26,6 +26,7 @@ class _CustomNavigationButtonState extends State<CustomNavigationButton> {
           onTap: (index) {
             setState(() {
               currntPage = index;
+              goToPageFromNavigationButton(currntPage, context);
             });
           },
           items: const [
