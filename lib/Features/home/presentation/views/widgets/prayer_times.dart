@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:muslim_app/Features/home/presentation/views/widgets/location_title.dart';
 import 'package:muslim_app/Features/home/presentation/views/widgets/prayer_times_list_view.dart';
 
 import '../../../../../core/utils/colors.dart';
-import '../../../../../core/utils/styles.dart';
 
 class PrayerTimes extends StatelessWidget {
   const PrayerTimes({super.key});
@@ -25,9 +25,14 @@ class PrayerTimes extends StatelessWidget {
               const SizedBox(
                 height: 7,
               ),
-              Text(
-                "Cairo, Egypt",
-                style: Styles.textStyle15.copyWith(color: ColorsStyles.black),
+              Container(
+                width: 160,
+                height: 27,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: ColorsStyles.prayerTimesCard,
+                ),
+                child:const LocationTitle(),
               ),
               const SizedBox(
                 height: 18,
@@ -40,3 +45,5 @@ class PrayerTimes extends StatelessWidget {
     );
   }
 }
+
+
