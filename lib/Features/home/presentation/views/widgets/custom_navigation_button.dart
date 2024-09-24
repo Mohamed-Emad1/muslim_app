@@ -19,7 +19,9 @@ class _CustomNavigationButtonState extends State<CustomNavigationButton> {
         borderRadius: BorderRadius.circular(12),
         child: BottomNavigationBar(
           selectedItemColor: ColorsStyles.white,
+          unselectedItemColor: ColorsStyles.white.withOpacity(0.5),
           backgroundColor: ColorsStyles.prayerTimesCard,
+          type: BottomNavigationBarType.shifting,
           currentIndex: currntPage,
           onTap: (index) {
             setState(() {
@@ -27,9 +29,27 @@ class _CustomNavigationButtonState extends State<CustomNavigationButton> {
             });
           },
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+              ),
+              label: "home",
+              backgroundColor: ColorsStyles.prayerTimesCard,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+              ),
+              label: "home",
+              backgroundColor: ColorsStyles.prayerTimesCard,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+              ),
+              label: "home",
+              backgroundColor: ColorsStyles.prayerTimesCard,
+            ),
           ],
         ),
       ),
