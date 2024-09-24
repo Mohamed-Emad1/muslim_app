@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/styles.dart';
 
@@ -7,13 +8,18 @@ class CustomAppbarTasbihView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
-        Icon(Icons.arrow_back),
-        SizedBox(
+        IconButton(
+          onPressed: () {
+            GoRouter.of(context).pop();
+          },
+          icon: const Icon(Icons.arrow_back),
+        ),
+        const SizedBox(
           width: 20,
         ),
-        Text(
+        const Text(
           "Tasbih Counter",
           style: Styles.textStyle15,
         ),

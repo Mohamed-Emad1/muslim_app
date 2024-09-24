@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_app/Features/tasbih/presentation/views/widgets/custom_app_bar.dart';
+import 'package:muslim_app/Features/tasbih/presentation/views/widgets/custom_navbutton_tasbih.dart';
 import 'package:muslim_app/Features/tasbih/presentation/views/widgets/main_tasbih_body.dart';
 
 class TasbihViewBody extends StatelessWidget {
@@ -13,9 +14,13 @@ class TasbihViewBody extends StatelessWidget {
         children: [
           CustomAppbarTasbihView(),
           MainTasbihBody(),
+          Expanded(child: SizedBox()),
+          CustomNavigationButtonTasbihView(),
+          SizedBox(
+            height: 31,
+          )
         ],
       ),
     );
   }
 }
-
