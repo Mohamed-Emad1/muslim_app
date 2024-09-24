@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:muslim_app/core/utils/app_routes.dart';
 
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/colors.dart';
@@ -13,7 +15,7 @@ class ScreenOptions extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
       child: Container(
         width: width * 0.9,
         height: height * 0.2,
@@ -52,11 +54,15 @@ class ScreenOptions extends StatelessWidget {
                 color: ColorsStyles.black.withOpacity(0.9),
               ),
             ),
-            const Positioned(
+             Positioned(
               right: 50,
               top: 75,
               child: CustomButton(
                 text: "Get Started Now",
+                onPressed: (){
+                  GoRouter.of(context).push(AppRoutes.kTasbihView);
+                },
+                
               ),
             ),
           ],

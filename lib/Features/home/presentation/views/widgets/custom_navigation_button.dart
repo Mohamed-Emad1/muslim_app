@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/functions/go_to_page_by_navigationBTN.dart';
 
@@ -39,9 +40,9 @@ class _CustomNavigationButtonState extends State<CustomNavigationButton> {
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.home,
+                Icons.format_list_bulleted_add,
               ),
-              label: "home",
+              label: "Tasbih Counter",
               backgroundColor: ColorsStyles.prayerTimesCard,
             ),
             BottomNavigationBarItem(

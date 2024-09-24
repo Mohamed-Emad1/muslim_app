@@ -4,16 +4,15 @@ import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/styles.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({super.key, required this.title, required this.image});
+  const CustomCard({super.key, required this.title, required this.image, this.onTap});
 
   final String title;
   final String image;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        debugPrint("clicked");
-      },
+      onTap: onTap,
       child: Padding(
         padding: const EdgeInsets.only(top: 16),
         child: AspectRatio(
