@@ -7,5 +7,6 @@ abstract class ColorsStyles {
   static const Color goldenColor = Color(0xffF6AF58);
   static const Color buttonColor = Color(0xff1C5153);
   static const Color optionsAndParyersTimesColor = Color(0xffEEEEEE);
+  static const Color prayerTimesCard = Color(0xff5D8082);
   
 }

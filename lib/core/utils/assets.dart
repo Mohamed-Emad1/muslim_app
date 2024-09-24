@@ -9,4 +9,5 @@ abstract class AssetsData {
   static const String hadith = 'assets/images/hadith.png';
   static const String donations = 'assets/images/donations.png';
   static const String doa = 'assets/images/doa.png';
+  static const String mosque = 'assets/images/mosque.png';
 }
