@@ -15,9 +15,10 @@ class PrayerTimes extends StatelessWidget {
         height: 147,
         width: double.infinity,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            color: Colors.transparent,
-            border: Border.all(color: ColorsStyles.prayerTimesCard, width: 2)),
+          borderRadius: BorderRadius.circular(12),
+          color: Colors.transparent,
+          border: Border.all(color: ColorsStyles.prayerTimesCard, width: 2),
+        ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Column(
@@ -32,7 +33,7 @@ class PrayerTimes extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                   color: ColorsStyles.prayerTimesCard,
                 ),
-                child:const LocationTitle(),
+                child: const LocationTitle(),
               ),
               const SizedBox(
                 height: 18,
@@ -45,5 +46,3 @@ class PrayerTimes extends StatelessWidget {
     );
   }
 }
-
-

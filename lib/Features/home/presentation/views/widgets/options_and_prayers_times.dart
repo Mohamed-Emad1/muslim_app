@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_app/Features/home/presentation/views/widgets/custom_grid_view.dart';
+import 'package:muslim_app/Features/home/presentation/views/widgets/custom_navigation_button.dart';
 import 'package:muslim_app/Features/home/presentation/views/widgets/prayer_times.dart';
 
 import '../../../../../core/utils/colors.dart';
 
-class OptionsScreensAndParayerTimes extends StatelessWidget {
-  const OptionsScreensAndParayerTimes({super.key});
+class ParayerTimesAndLocation extends StatelessWidget {
+  const ParayerTimesAndLocation({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +25,9 @@ class OptionsScreensAndParayerTimes extends StatelessWidget {
             child: CustomGridView(),
           ),
           PrayerTimes(),
+          CustomNavigationButton()
         ],
       ),
     );
   }
 }
-
-

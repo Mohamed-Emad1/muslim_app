@@ -14,8 +14,12 @@ class HomeViewBody extends StatelessWidget {
       children: [
         CustomAppBar(),
         ScreenOptions(),
-        Expanded(child: OptionsScreensAndParayerTimes()),
+        Expanded(
+          child: ParayerTimesAndLocation(),
+        ),
       ],
     );
   }
 }
+
+

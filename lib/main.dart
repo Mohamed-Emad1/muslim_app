@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muslim_app/Features/home/presentation/views/home_view.dart';
+import 'package:muslim_app/core/utils/app_routes.dart';
 
 import 'core/utils/colors.dart';
 
@@ -13,13 +13,13 @@ class MuslimApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return  MaterialApp.router(
+      routerConfig: AppRoutes.router,
       debugShowCheckedModeBanner: false,
       title: 'Muslim app',
       theme: ThemeData.dark().copyWith(
          scaffoldBackgroundColor: ColorsStyles.homeBackGround,
       ),
-      home:const HomeView(),
     );
   }
 }
