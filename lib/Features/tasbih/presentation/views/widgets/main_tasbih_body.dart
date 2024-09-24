@@ -1,8 +1,12 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/styles.dart';
+import '../../manager/Tasbih_cubit/tasbih_cubit.dart';
 
 class MainTasbihBody extends StatefulWidget {
   const MainTasbihBody({super.key});
@@ -12,63 +16,84 @@ class MainTasbihBody extends StatefulWidget {
 }
 
 class _MainTasbihBodyState extends State<MainTasbihBody> {
+  void dispos() {
+    super.dispose();
+  }
+
   int count = 0;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 37),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "set:1",
-                style: Styles.textStyle12,
-              ),
-              Text(
-                "Range:100",
-                style: Styles.textStyle12,
-              ),
-            ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 37),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "set:1",
+                  style: Styles.textStyle12,
+                ),
+                Text(
+                  "Range:100",
+                  style: Styles.textStyle12,
+                ),
+              ],
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 12,
-        ),
-        SizedBox(
-          height: 100,
-          child: Image.asset(
-            AssetsData.fourthThekr,
-            fit: BoxFit.fill,
+          const SizedBox(
+            height: 12,
           ),
-        ),
-        const SizedBox(
-          height: 40,
-        ),
-        const Text(
-          "Tasbih Counter",
-          style: Styles.textStyle15,
-        ),
-        const SizedBox(
-          height: 6,
-        ),
-        Text(
-          count.toString(),
-          style: Styles.textStyle76.copyWith(color: ColorsStyles.goldenColor),
-        ),
-        TextButton(
+          SizedBox(
+            height: 100,
+            child: Image.asset(
+              AssetsData.fourthThekr,
+              fit: BoxFit.fill,
+            ),
+          ),
+          const SizedBox(
+            height: 40,
+          ),
+          const Text(
+            "Tasbih Counter",
+            style: Styles.textStyle15,
+          ),
+          BlocBuilder<TasbihCubit, TasbihState>(builder: (context, state) {
+            if (state is TasbihCounter) {
+              count = state.counter;
+            } else if (state is TasbihFinished) {
+              count = 0;
+            }
+
+            return Text(
+              count.toString(),
+              style:
+                  Styles.textStyle76.copyWith(color: ColorsStyles.goldenColor),
+            );
+          }),
+          const SizedBox(
+            height: 6,
+          ),
+          TextButton(
             style: TextButton.styleFrom(
               backgroundColor: ColorsStyles.homeBackGround,
               padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
             ),
-            onPressed: () {},
+            onPressed: () {
+              count++;
+              log("$count");
+              BlocProvider.of<TasbihCubit>(context)
+                  .counterTasbih(counter: count);
+            },
             child: Text(
               "Counte",
               style: Styles.textStyle16.copyWith(
                   color: ColorsStyles.goldenColor, fontWeight: FontWeight.w900),
-            ))
-      ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }

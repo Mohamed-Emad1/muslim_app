@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
 import '../../../../../core/utils/colors.dart';
 
 class CustomNavigationButtonTasbihView extends StatefulWidget {
@@ -28,12 +26,7 @@ class _CustomNavigationButtonTasbihViewState
           currentIndex: currntPage,
           onTap: (index) {
             currntPage = index;
-            if (currntPage == 1) {
-              GoRouter.of(context).pop();
-            }
-            setState(() {
-              // goToPageFromNavigationButtonHomeView(currntPage, context);
-            });
+            // actionFromNavigationButton(index, context);
           },
           items: const [
             BottomNavigationBarItem(
@@ -41,6 +34,13 @@ class _CustomNavigationButtonTasbihViewState
                 Icons.refresh,
               ),
               label: "refresh",
+              backgroundColor: ColorsStyles.prayerTimesCard,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.change_circle,
+              ),
+              label: "change Thekr",
               backgroundColor: ColorsStyles.prayerTimesCard,
             ),
             BottomNavigationBarItem(
@@ -55,4 +55,15 @@ class _CustomNavigationButtonTasbihViewState
       ),
     );
   }
+
+  // void actionFromNavigationButton(int index, BuildContext context) {
+  //   if (index == 0) {
+  //     BlocProvider.of<TasbihCubit>(context).refreshtasbeih();// Call refreshTasbih when "refresh" is tapped
+  //   } else if (index == 1) {
+  //     BlocProvider.of<TasbihCubit>(context).changeTasbih();
+  //   }
+  //   else if(index == 2) {
+  //     GoRouter.of(context).pop();
+  //   }
+  // }
 }

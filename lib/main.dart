@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:muslim_app/core/utils/app_routes.dart';
 
 import 'core/utils/colors.dart';
+import 'core/utils/simple_bloc_observer.dart';
 
 void main() {
+  Bloc.observer = SimpleBlocObserver();
   runApp(const MuslimApp());
 }
 

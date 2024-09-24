@@ -5,4 +5,26 @@ part 'tasbih_state.dart';
 
 class TasbihCubit extends Cubit<TasbihState> {
   TasbihCubit() : super(TasbihInitial());
+
+  void counterTasbih({required counter}) {
+
+    if (counter < 100) {
+    emit(TasbihCounter(
+      counter: counter
+    ));
+      
+    }
+    else if (counter == 100) {
+      emit(TasbihFinished(
+        counter: counter
+      ));
+    }
+
+  }
+  void changeTasbih() {
+    emit(TasbihChanged());
+  }
+  void refreshtasbeih() {
+    emit(TasbihRefreshed());
+  }
 }
