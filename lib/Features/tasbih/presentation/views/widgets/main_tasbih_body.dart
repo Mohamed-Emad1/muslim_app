@@ -22,25 +22,14 @@ class _MainTasbihBodyState extends State<MainTasbihBody> {
   }
 
   int count = 0;
+  String thekerImage = AssetsData.firstthekr;
+  int indexSet = 1;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 37),
-            child: SetAndRange(),
-          ),
-          const SizedBox(
-            height: 12,
-          ),
-          SizedBox(
-            height: 100,
-            child: Image.asset(
-              AssetsData.fourthThekr,
-              fit: BoxFit.fill,
-            ),
-          ),
+          changeThekrBlocBuilder(),
           const SizedBox(
             height: 40,
           ),
@@ -48,21 +37,7 @@ class _MainTasbihBodyState extends State<MainTasbihBody> {
             "Tasbih Counter",
             style: Styles.textStyle15,
           ),
-          BlocBuilder<TasbihCubit, TasbihState>(builder: (context, state) {
-            if (state is TasbihCounter) {
-              count = state.counter;
-            } else if (state is TasbihFinished) {
-              count = 0;
-            } else if (state is TasbihRefreshed) {
-              count = 0;
-            }
-
-            return Text(
-              count.toString(),
-              style:
-                  Styles.textStyle76.copyWith(color: ColorsStyles.goldenColor),
-            );
-          }),
+          tasbihblocBuilder(),
           const SizedBox(
             height: 6,
           ),
@@ -86,5 +61,56 @@ class _MainTasbihBodyState extends State<MainTasbihBody> {
         ],
       ),
     );
+  }
+
+  BlocBuilder<TasbihCubit, TasbihState> changeThekrBlocBuilder() {
+    return BlocBuilder<TasbihCubit, TasbihState>(
+          builder: (context, state) {
+            if (state is TasbihChanged) {
+              count = 0;
+              thekerImage = state.thekr;
+              indexSet = state.index + 1;
+              log(indexSet.toString());
+            }
+            return Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 37),
+                  child: SetAndRange(
+                    setNumber: indexSet ,
+                  ),
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                SizedBox(
+                  height: 100,
+                  child: Image.asset(
+                    thekerImage,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ],
+            );
+          },
+        );
+  }
+
+  BlocBuilder<TasbihCubit, TasbihState> tasbihblocBuilder() {
+    return BlocBuilder<TasbihCubit, TasbihState>(builder: (context, state) {
+      if (state is TasbihCounter) {
+        count = state.counter;
+      } else if (state is TasbihFinished || state is TasbihRefreshed) {
+        count = 0;
+      }
+      if (state is TasbihChanged) {
+        thekerImage = state.thekr;
+      }
+
+      return Text(
+        count.toString(),
+        style: Styles.textStyle76.copyWith(color: ColorsStyles.goldenColor),
+      );
+    });
   }
 }

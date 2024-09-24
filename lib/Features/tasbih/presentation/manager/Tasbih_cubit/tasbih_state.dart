@@ -12,4 +12,8 @@ final class TasbihCounter extends TasbihState {
   TasbihCounter({required this.counter});
 }
 final class TasbihRefreshed extends TasbihState {}
-final class TasbihChanged extends TasbihState {}
+final class TasbihChanged extends TasbihState {
+  final String thekr;
+  final int index;
+  TasbihChanged({required this.index , required this.thekr});
+}

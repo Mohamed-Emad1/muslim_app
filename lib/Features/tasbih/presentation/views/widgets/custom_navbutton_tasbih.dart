@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -14,6 +15,7 @@ class CustomNavigationButtonTasbihView extends StatefulWidget {
 
 class _CustomNavigationButtonTasbihViewState
     extends State<CustomNavigationButtonTasbihView> {
+  int thekrNumber = 0;
   int currntPage = 0;
   @override
   Widget build(BuildContext context) {
@@ -61,11 +63,13 @@ class _CustomNavigationButtonTasbihViewState
 
   void actionFromNavigationButton(int index, BuildContext context) {
     if (index == 0) {
-      BlocProvider.of<TasbihCubit>(context).refreshtasbeih();// Call refreshTasbih when "refresh" is tapped
+      BlocProvider.of<TasbihCubit>(context)
+          .refreshtasbeih(); // Call refreshTasbih when "refresh" is tapped
     } else if (index == 1) {
-      BlocProvider.of<TasbihCubit>(context).changeTasbih();
-    }
-    else if(index == 2) {
+      thekrNumber = (thekrNumber + 1) % 4;
+      // log(thekrNumber.toString());
+      BlocProvider.of<TasbihCubit>(context).changeTasbih(thekerNumber: thekrNumber);
+    } else if (index == 2) {
       GoRouter.of(context).pop();
     }
   }
