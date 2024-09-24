@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:muslim_app/Features/tasbih/presentation/views/widgets/set_and_goal.dart';
 
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/colors.dart';
@@ -28,19 +29,7 @@ class _MainTasbihBodyState extends State<MainTasbihBody> {
         children: [
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 37),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "set:1",
-                  style: Styles.textStyle12,
-                ),
-                Text(
-                  "Range:100",
-                  style: Styles.textStyle12,
-                ),
-              ],
-            ),
+            child: SetAndRange(),
           ),
           const SizedBox(
             height: 12,
@@ -63,6 +52,8 @@ class _MainTasbihBodyState extends State<MainTasbihBody> {
             if (state is TasbihCounter) {
               count = state.counter;
             } else if (state is TasbihFinished) {
+              count = 0;
+            } else if (state is TasbihRefreshed) {
               count = 0;
             }
 

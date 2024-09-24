@@ -16,7 +16,6 @@ class TasbihCubit extends Cubit<TasbihState> {
     }
     else if (counter == 100) {
       emit(TasbihFinished(
-        counter: counter
       ));
     }
 

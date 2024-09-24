@@ -6,8 +6,6 @@ sealed class TasbihState {}
 final class TasbihInitial extends TasbihState {}
 final class TasbihFinished extends TasbihState {
 
-  final int counter;
-  TasbihFinished({required this.counter});
 }
 final class TasbihCounter extends TasbihState {
     final int counter;
