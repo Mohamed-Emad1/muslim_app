@@ -65,35 +65,35 @@ class _MainTasbihBodyState extends State<MainTasbihBody> {
 
   BlocBuilder<TasbihCubit, TasbihState> changeThekrBlocBuilder() {
     return BlocBuilder<TasbihCubit, TasbihState>(
-          builder: (context, state) {
-            if (state is TasbihChanged) {
-              count = 0;
-              thekerImage = state.thekr;
-              indexSet = state.index + 1;
-              log(indexSet.toString());
-            }
-            return Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 37),
-                  child: SetAndRange(
-                    setNumber: indexSet ,
-                  ),
-                ),
-                const SizedBox(
-                  height: 12,
-                ),
-                SizedBox(
-                  height: 100,
-                  child: Image.asset(
-                    thekerImage,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ],
-            );
-          },
+      builder: (context, state) {
+        if (state is TasbihChanged) {
+          count = 0;
+          thekerImage = state.thekr;
+          indexSet = state.index + 1;
+          log(indexSet.toString());
+        }
+        return Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 37),
+              child: SetAndRange(
+                setNumber: indexSet,
+              ),
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            SizedBox(
+              height: 100,
+              child: Image.asset(
+                thekerImage,
+                fit: BoxFit.fill,
+              ),
+            ),
+          ],
         );
+      },
+    );
   }
 
   BlocBuilder<TasbihCubit, TasbihState> tasbihblocBuilder() {

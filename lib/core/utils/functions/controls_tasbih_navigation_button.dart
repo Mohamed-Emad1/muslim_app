@@ -1,3 +1,1 @@
-void controlsTasbihNavigationButton(currntPage){
-  
-}
+void controlsTasbihNavigationButton(currntPage) {}

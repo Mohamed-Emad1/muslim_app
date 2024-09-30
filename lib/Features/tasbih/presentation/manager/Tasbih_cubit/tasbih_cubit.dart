@@ -8,35 +8,26 @@ part 'tasbih_state.dart';
 class TasbihCubit extends Cubit<TasbihState> {
   TasbihCubit() : super(TasbihInitial());
 
-  final List<String> thekerImages= const [
+  final List<String> thekerImages = const [
     AssetsData.firstthekr,
     AssetsData.secondThekr,
     AssetsData.thirdThekr,
     AssetsData.fourthThekr,
   ];
   void counterTasbih({required counter}) {
-
     if (counter < 100) {
-    emit(TasbihCounter(
-      counter: counter
-    ));
-      
+      emit(TasbihCounter(counter: counter));
+    } else if (counter == 100) {
+      emit(TasbihFinished());
     }
-    else if (counter == 100) {
-      emit(TasbihFinished(
-      ));
-    }
-
   }
+
   void changeTasbih({required thekerNumber}) {
     emit(TasbihRefreshed());
-    emit(TasbihChanged(
-      thekr: thekerImages[thekerNumber],
-      index: thekerNumber
-    ));
+    emit(TasbihChanged(thekr: thekerImages[thekerNumber], index: thekerNumber));
   }
+
   void refreshtasbeih() {
-    
     emit(TasbihRefreshed());
   }
 }

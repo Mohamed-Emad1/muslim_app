@@ -4,7 +4,8 @@ import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/styles.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({super.key, required this.title, required this.image, this.onTap});
+  const CustomCard(
+      {super.key, required this.title, required this.image, this.onTap});
 
   final String title;
   final String image;

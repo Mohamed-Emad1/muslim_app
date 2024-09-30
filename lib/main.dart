@@ -16,14 +16,13 @@ class MuslimApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp.router(
+    return MaterialApp.router(
       routerConfig: AppRoutes.router,
       debugShowCheckedModeBanner: false,
       title: 'Muslim app',
       theme: ThemeData.dark().copyWith(
-         scaffoldBackgroundColor: ColorsStyles.homeBackGround,
+        scaffoldBackgroundColor: ColorsStyles.homeBackGround,
       ),
     );
   }
 }
-

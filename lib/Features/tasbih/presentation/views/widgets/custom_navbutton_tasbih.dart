@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -68,7 +67,8 @@ class _CustomNavigationButtonTasbihViewState
     } else if (index == 1) {
       thekrNumber = (thekrNumber + 1) % 4;
       // log(thekrNumber.toString());
-      BlocProvider.of<TasbihCubit>(context).changeTasbih(thekerNumber: thekrNumber);
+      BlocProvider.of<TasbihCubit>(context)
+          .changeTasbih(thekerNumber: thekrNumber);
     } else if (index == 2) {
       GoRouter.of(context).pop();
     }

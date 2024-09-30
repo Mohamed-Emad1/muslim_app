@@ -54,15 +54,14 @@ class ScreenOptions extends StatelessWidget {
                 color: ColorsStyles.black.withOpacity(0.9),
               ),
             ),
-             Positioned(
+            Positioned(
               right: 50,
               top: 75,
               child: CustomButton(
                 text: "Get Started Now",
-                onPressed: (){
+                onPressed: () {
                   GoRouter.of(context).push(AppRoutes.kTasbihView);
                 },
-                
               ),
             ),
           ],

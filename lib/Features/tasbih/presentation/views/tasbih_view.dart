@@ -8,12 +8,9 @@ class TasbihView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-    
       backgroundColor: ColorsStyles.tasbihViewBackGround,
       body: SafeArea(
-        
         child: TasbihViewBody(),
-        
       ),
     );
   }

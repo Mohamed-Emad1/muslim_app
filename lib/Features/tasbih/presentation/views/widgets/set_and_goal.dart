@@ -4,7 +4,8 @@ import '../../../../../core/utils/styles.dart';
 
 class SetAndRange extends StatelessWidget {
   const SetAndRange({
-    super.key, required this.setNumber,
+    super.key,
+    required this.setNumber,
   });
 
   final int setNumber;
