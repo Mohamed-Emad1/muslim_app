@@ -4,8 +4,7 @@ import 'package:muslim_app/core/utils/api_service.dart';
 
 abstract class PrayerTimesRemote {
   Future<List<PrayerTimeEntity>> getPrayerTimes(
-      {required String endPoint, required double latitude,
-      required double longitude});
+      {required String endPoint});
 }
 
 class PrayerTimesRemoteImpl implements PrayerTimesRemote {
@@ -16,11 +15,9 @@ class PrayerTimesRemoteImpl implements PrayerTimesRemote {
   @override
   @override
   Future<List<PrayerTimeEntity>> getPrayerTimes(
-      {required String endPoint,
-      required double latitude,
-      required double longitude}) async {
+      {required String endPoint}) async {
     var response = await _apiService.getPrayerTimes(
-        endPoint: "$endPoint?latitude=$latitude&longitude=$longitude");
+        endPoint: endPoint);
 
     List<PrayerTimeEntity> prayerTimes = getPrayerTimesModel(response);
 

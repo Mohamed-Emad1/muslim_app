@@ -4,5 +4,5 @@ import 'package:muslim_app/core/errors/failure.dart';
 
 abstract class PrayersRepo {
 
-  Future<Either<Failure, List<PrayerTimeEntity>>> getPrayerTimes();
+  Future<Either<Failure, List<PrayerTimeEntity>>> getPrayerTimes({required double latitude, required double longitude});
 }
