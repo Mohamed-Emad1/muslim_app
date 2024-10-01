@@ -1,10 +1,10 @@
 const kSurahBox = "surahs";
 const kAyahsBox = "ayahs";
 const kSurahStartingPages = [
-  1,   // Al-Fatiha
-  2,   // Al-Baqarah
-  50,  // Aal-E-Imran
-  77,  // An-Nisa
+  1, // Al-Fatiha
+  2, // Al-Baqarah
+  50, // Aal-E-Imran
+  77, // An-Nisa
   106, // Al-Maidah
   128, // Al-An'am
   151, // Al-A'raf
@@ -114,6 +114,5 @@ const kSurahStartingPages = [
   603, // Al-Masad
   604, // Al-Ikhlas
   604, // Al-Falaq
-  604  // An-Nas
+  604 // An-Nas
 ];
-

@@ -17,7 +17,7 @@ void main() async {
   Hive.registerAdapter(AyahAdapter());
   Hive.openBox<SurahModel>(kSurahBox);
   Hive.openBox<Ayah>(kAyahsBox);
-   setupServiceLocator();
+  setupServiceLocator();
   Bloc.observer = SimpleBlocObserver();
   runApp(const MuslimApp());
 }

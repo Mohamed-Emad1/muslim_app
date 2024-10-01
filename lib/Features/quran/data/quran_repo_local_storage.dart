@@ -9,7 +9,7 @@ abstract class QuranRepoLocalStorage {
 class QuranRepoLocalStorageImpl extends QuranRepoLocalStorage {
   @override
   List<SurahModel> getSurahs() {
-   var box = Hive.box<SurahModel>(kSurahBox);
+    var box = Hive.box<SurahModel>(kSurahBox);
     return box.values.toList();
   }
 }

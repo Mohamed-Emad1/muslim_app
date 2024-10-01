@@ -27,9 +27,7 @@ abstract class AppRoutes {
       GoRoute(
         path: kQuranView,
         builder: (context, state) => BlocProvider(
-          create: (context) => QuranCubit(
-            getIt.get<QuranRepoImplementaion>()
-          ),
+          create: (context) => QuranCubit(getIt.get<QuranRepoImplementaion>()),
           child: const QuranView(),
         ),
       ),

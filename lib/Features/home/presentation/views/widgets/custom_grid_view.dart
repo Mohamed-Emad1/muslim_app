@@ -33,8 +33,8 @@ class CustomGridView extends StatelessWidget {
         CustomCard(
           title: "Qu'ran",
           image: AssetsData.quran,
-          onTap: (){
-             GoRouter.of(context).push(AppRoutes.kQuranView);
+          onTap: () {
+            GoRouter.of(context).push(AppRoutes.kQuranView);
           },
         ),
         const CustomCard(

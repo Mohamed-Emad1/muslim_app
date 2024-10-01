@@ -1,28 +1,29 @@
 import 'package:hive/hive.dart';
 part 'ayah.g.dart';
+
 @HiveType(typeId: 1)
 class Ayah {
   @HiveField(0)
   int? number;
- @HiveField(1)
+  @HiveField(1)
   String? audio;
-@HiveField(2)
+  @HiveField(2)
   List<dynamic>? audioSecondary;
-@HiveField(3)
+  @HiveField(3)
   String? text;
-@HiveField(4)
+  @HiveField(4)
   int? numberInSurah;
-@HiveField(5)
+  @HiveField(5)
   int? juz;
-@HiveField(6)
+  @HiveField(6)
   int? manzil;
-@HiveField(7)
+  @HiveField(7)
   int? page;
-@HiveField(8)
+  @HiveField(8)
   int? ruku;
-@HiveField(9)
+  @HiveField(9)
   int? hizbQuarter;
-@HiveField(10)
+  @HiveField(10)
   bool? sajda;
 
   Ayah({
@@ -39,7 +40,7 @@ class Ayah {
     this.sajda,
   });
 
-factory Ayah.fromJson(Map<String, dynamic> json) {
+  factory Ayah.fromJson(Map<String, dynamic> json) {
     bool? sajda;
     if (json['sajda'] is bool) {
       // If sajda is a boolean
@@ -63,7 +64,6 @@ factory Ayah.fromJson(Map<String, dynamic> json) {
       sajda: sajda, // Pass the calculated sajda value here
     );
   }
-
 
   Map<String, dynamic> toJson() => {
         'number': number,

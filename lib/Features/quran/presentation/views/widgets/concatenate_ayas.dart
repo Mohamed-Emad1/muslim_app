@@ -6,6 +6,7 @@ class ConcatenateAyas {
   addCounter() {
     _counter++;
   }
+
   getCounter() {
     return _counter;
   }

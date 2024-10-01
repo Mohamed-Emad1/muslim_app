@@ -1,4 +1,4 @@
-  import '../../../../data/models/surah_model/surah_model.dart';
+import '../../../../data/models/surah_model/surah_model.dart';
 import '../concatenate_ayas.dart';
 
 ConcatenateAyas concatenateAyahs(List<SurahModel> surahs, int index) {
