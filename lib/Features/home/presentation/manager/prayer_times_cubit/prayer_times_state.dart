@@ -7,6 +7,14 @@ final class PrayerTimesInitial extends PrayerTimesState {}
 
 final class PrayerTimesLoading extends PrayerTimesState {}
 
-final class PrayerTimesSuccess extends PrayerTimesState {}
+final class PrayerTimesSuccess extends PrayerTimesState {
+  final List<PrayerTimeEntity> prayerTimes;
 
-final class PrayerTimesFailure extends PrayerTimesState {}
+  PrayerTimesSuccess(this.prayerTimes);
+}
+
+final class PrayerTimesFailure extends PrayerTimesState {
+  final String errorMessage;
+
+  PrayerTimesFailure(this.errorMessage);
+}
