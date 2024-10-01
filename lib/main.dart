@@ -6,6 +6,7 @@ import 'package:muslim_app/Features/quran/data/models/surah_model/ayah.dart';
 import 'package:muslim_app/Features/quran/data/models/surah_model/surah_model.dart';
 import 'package:muslim_app/constants.dart';
 import 'package:muslim_app/core/utils/app_routes.dart';
+import 'package:muslim_app/core/utils/service_locator.dart';
 
 import 'core/utils/colors.dart';
 import 'core/utils/simple_bloc_observer.dart';
@@ -16,6 +17,7 @@ void main() async {
   Hive.registerAdapter(AyahAdapter());
   Hive.openBox<SurahModel>(kSurahBox);
   Hive.openBox<Ayah>(kAyahsBox);
+   setupServiceLocator();
   Bloc.observer = SimpleBlocObserver();
   runApp(const MuslimApp());
 }

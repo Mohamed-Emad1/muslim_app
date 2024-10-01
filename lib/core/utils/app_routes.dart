@@ -1,15 +1,11 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:muslim_app/Features/quran/data/quran_remote_data.dart';
-import 'package:muslim_app/Features/quran/data/quran_repo_local_storage.dart';
 import 'package:muslim_app/Features/quran/data/repo/quran_repo_implementaion.dart';
 import 'package:muslim_app/Features/quran/presentation/manager/quran_cubit/quran_cubit.dart';
 import 'package:muslim_app/Features/quran/presentation/views/quran_view.dart';
 import 'package:muslim_app/Features/tasbih/presentation/manager/Tasbih_cubit/tasbih_cubit.dart';
 import 'package:muslim_app/Features/tasbih/presentation/views/tasbih_view.dart';
-import 'package:muslim_app/core/utils/api_service.dart';
-
+import 'package:muslim_app/core/utils/service_locator.dart';
 import '../../Features/home/presentation/views/home_view.dart';
 
 abstract class AppRoutes {
@@ -31,13 +27,9 @@ abstract class AppRoutes {
       GoRoute(
         path: kQuranView,
         builder: (context, state) => BlocProvider(
-          create: (context) => QuranCubit(QuranRepoImplementaion(
-              quranRepoLocalStorage: QuranRepoLocalStorageImpl(),
-              quranRepoRemote: QuranRepoRemoteImpl(
-                apiService: ApiService(
-                  Dio(),
-                ),
-              ))),
+          create: (context) => QuranCubit(
+            getIt.get<QuranRepoImplementaion>()
+          ),
           child: const QuranView(),
         ),
       ),
