@@ -9,8 +9,8 @@ class QuranPageNumber extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 24,
-      height: 24,
+      width: 40,
+      height: 40,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: ColorsStyles.prayerTimesCard,

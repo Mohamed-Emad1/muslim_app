@@ -15,7 +15,7 @@ class QuranCubit extends Cubit<QuranState> {
     result.fold((fauilre) {
       emit(QuranFailure(fauilre.message));
     }, (surahs) {
-      emit(QuranSuccess(surahs));
+      emit(QuranSuccess(surahs, 0));
     });
   }
 }
