@@ -29,7 +29,7 @@ class ShowSurahAyat extends StatelessWidget {
                   const EdgeInsets.only(left: 30, right: 8, top: 8, bottom: 8),
               child: Text(
                 ayahs,
-                style: Styles.textStyle16.copyWith(
+                style: Styles.textStyle19.copyWith(
                     color: ColorsStyles.black), // Adjust font size as needed
                 textAlign:
                     TextAlign.justify, // Justify text for better alignment

@@ -1,14 +1,28 @@
+import 'package:hive/hive.dart';
+part 'ayah.g.dart';
+@HiveType(typeId: 1)
 class Ayah {
+  @HiveField(0)
   int? number;
+ @HiveField(1)
   String? audio;
+@HiveField(2)
   List<dynamic>? audioSecondary;
+@HiveField(3)
   String? text;
+@HiveField(4)
   int? numberInSurah;
+@HiveField(5)
   int? juz;
+@HiveField(6)
   int? manzil;
+@HiveField(7)
   int? page;
+@HiveField(8)
   int? ruku;
+@HiveField(9)
   int? hizbQuarter;
+@HiveField(10)
   bool? sajda;
 
   Ayah({

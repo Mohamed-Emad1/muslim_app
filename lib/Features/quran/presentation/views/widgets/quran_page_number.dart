@@ -12,12 +12,14 @@ class QuranPageNumber extends StatelessWidget {
       width: 40,
       height: 40,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(20),
         color: ColorsStyles.prayerTimesCard,
       ),
-      child: Text(
-        page,
-        textAlign: TextAlign.center,
+      child: Center(
+        child: Text(
+          page,
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }

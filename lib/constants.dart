@@ -1,3 +1,5 @@
+const kSurahBox = "surahs";
+const kAyahsBox = "ayahs";
 const kSurahStartingPages = [
   1,   // Al-Fatiha
   2,   // Al-Baqarah

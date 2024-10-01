@@ -1,11 +1,21 @@
-import 'ayah.dart';
+import 'package:hive/hive.dart';
 
+import 'ayah.dart';
+part 'surah_model.g.dart';
+
+@HiveType(typeId: 0)
 class SurahModel {
+ @HiveField(0) 
   int? number;
+@HiveField(1)
   String? name;
+@HiveField(2)
   String? englishName;
+@HiveField(3)
   String? englishNameTranslation;
+@HiveField(4)
   String? revelationType;
+  @HiveField(5)
   List<Ayah>? ayahs;
 
   SurahModel({
