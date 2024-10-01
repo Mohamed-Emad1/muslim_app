@@ -1,5 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:muslim_app/Features/home/data/prayer_local_storage.dart';
+import 'package:muslim_app/Features/home/data/prayer_times_remote.dart';
+import 'package:muslim_app/Features/home/data/repos/prayer_repo_impl.dart';
 import 'package:muslim_app/Features/quran/data/quran_remote_data.dart';
 import 'package:muslim_app/Features/quran/data/quran_repo_local_storage.dart';
 import 'package:muslim_app/Features/quran/data/repo/quran_repo_implementaion.dart';
@@ -13,10 +16,19 @@ void setupServiceLocator() {
       Dio(),
     ),
   );
-  getIt.registerSingleton<QuranRepoImplementaion>(QuranRepoImplementaion(
-    quranRepoLocalStorage: QuranRepoLocalStorageImpl(),
-    quranRepoRemote: QuranRepoRemoteImpl(
+  getIt.registerSingleton<QuranRepoImplementaion>(
+    QuranRepoImplementaion(
+      quranRepoLocalStorage: QuranRepoLocalStorageImpl(),
+      quranRepoRemote: QuranRepoRemoteImpl(
+        apiService: getIt<ApiService>(),
+      ),
+    ),
+  );
+
+  getIt.registerSingleton<PrayerRepoImpl>(PrayerRepoImpl(
+    prayerLocalStorageImpl: PrayerLocalStorageImpl(),
+    prayersRepoRemote: PrayerTimesRemoteImpl(
       apiService: getIt<ApiService>(),
     ),
-  ));
+  ),);
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:muslim_app/Features/home/data/repos/prayer_repo_impl.dart';
+import 'package:muslim_app/Features/home/presentation/manager/prayer_times_cubit/prayer_times_cubit.dart';
 import 'package:muslim_app/Features/quran/data/models/surah_model/ayah.dart';
 import 'package:muslim_app/Features/quran/data/models/surah_model/surah_model.dart';
 import 'package:muslim_app/constants.dart';
@@ -28,12 +30,15 @@ class MuslimApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: AppRoutes.router,
-      debugShowCheckedModeBanner: false,
-      title: 'Muslim app',
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: ColorsStyles.homeBackGround,
+    return BlocProvider(
+      create: (context) => PrayerTimesCubit(getIt.get<PrayerRepoImpl>()..getPrayerTimes(latitude: 51.509865, longitude: 	-0.118092),),
+      child: MaterialApp.router(
+        routerConfig: AppRoutes.router,
+        debugShowCheckedModeBanner: false,
+        title: 'Muslim app',
+        theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: ColorsStyles.homeBackGround,
+        ),
       ),
     );
   }

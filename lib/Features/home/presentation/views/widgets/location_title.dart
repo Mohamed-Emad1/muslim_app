@@ -4,22 +4,22 @@ import '../../../../../core/utils/styles.dart';
 
 class LocationTitle extends StatelessWidget {
   const LocationTitle({
-    super.key,
+    super.key, required this.location,
   });
-
+  final String location;
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(
+        const Icon(
           Icons.location_on,
           size: 18,
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
         ),
-        Text("Cairo, Egypt", style: Styles.textStyle15),
+        Text(location, style: Styles.textStyle15),
       ],
     );
   }

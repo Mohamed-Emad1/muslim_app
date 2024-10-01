@@ -10,6 +10,7 @@ class HomeView extends StatelessWidget {
     return const Scaffold(
       body: SafeArea(
         child: HomeViewBody(),
+        // child: LocationScreen(),
       ),
       backgroundColor: ColorsStyles.homeBackGround,
     );
