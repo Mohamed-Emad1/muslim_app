@@ -3,8 +3,9 @@ import 'package:muslim_app/Features/quran/presentation/views/widgets/quran_page_
 import 'package:muslim_app/core/utils/styles.dart';
 
 class ShowSurahAyat extends StatelessWidget {
-  const ShowSurahAyat({super.key});
-
+  const ShowSurahAyat({super.key, required this.ayahs, required this.pageNumber});
+  final String ayahs;
+  final String pageNumber;
   @override
   Widget build(BuildContext context) {
     // String concatenatedAyahs = ayahs.join(" ");
@@ -17,15 +18,15 @@ class ShowSurahAyat extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           color: const Color.fromARGB(255, 255, 255, 255),
         ),
-        child: const Column(
+        child: Column(
           children: [
             Text(
-              "الاية",
+              ayahs,
               style: Styles.textStyle16, // Adjust font size as needed
               textAlign: TextAlign.justify, // Justify text for better alignment
             ),
             QuranPageNumber(
-              page: "1",
+              page: pageNumber,
             ),
           ],
         ),
@@ -33,5 +34,3 @@ class ShowSurahAyat extends StatelessWidget {
     );
   }
 }
-
-

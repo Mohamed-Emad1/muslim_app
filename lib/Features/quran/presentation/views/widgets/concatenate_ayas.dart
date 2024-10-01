@@ -1,12 +1,15 @@
 class ConcatenateAyas {
-      final List<String> _ayahs = [
-  ];
+  final List<String> _ayahs = [];
 
-  addAyah(String ayah) {
+  addAyah({required String ayah}) {
     _ayahs.add(ayah);
   }
 
   String concatenateAyahs() {
     return _ayahs.join(" ");
+  }
+
+  void clearAyahs() {
+    _ayahs.clear();
   }
 }
