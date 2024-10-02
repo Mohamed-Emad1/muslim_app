@@ -1,5 +1,3 @@
-
-
 import 'package:muslim_app/Features/home/data/entities/prayer_time_entity.dart';
 import 'package:muslim_app/Features/home/data/models/prayer_times_model/prayer_times_model.dart';
 import 'package:muslim_app/core/utils/api_service.dart';

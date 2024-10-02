@@ -25,10 +25,12 @@ void setupServiceLocator() {
     ),
   );
 
-  getIt.registerSingleton<PrayerRepoImpl>(PrayerRepoImpl(
-    prayerLocalStorageImpl: PrayerLocalStorageImpl(),
-    prayersRepoRemote: PrayerTimesRemoteImpl(
-      apiService: getIt<ApiService>(),
+  getIt.registerSingleton<PrayerRepoImpl>(
+    PrayerRepoImpl(
+      prayerLocalStorageImpl: PrayerLocalStorageImpl(),
+      prayersRepoRemote: PrayerTimesRemoteImpl(
+        apiService: getIt<ApiService>(),
+      ),
     ),
-  ),);
+  );
 }

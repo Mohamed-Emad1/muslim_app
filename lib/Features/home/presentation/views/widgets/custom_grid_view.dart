@@ -26,7 +26,7 @@ class CustomGridView extends StatelessWidget {
           title: "Hadith",
           image: AssetsData.hadith,
         ),
-         CustomCard(
+        CustomCard(
           title: "Doa",
           image: AssetsData.doa,
           onTap: () {

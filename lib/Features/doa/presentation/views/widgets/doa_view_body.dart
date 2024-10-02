@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:muslim_app/Features/doa/presentation/views/widgets/doa_card.dart';
+import 'package:muslim_app/Features/doa/presentation/views/widgets/doa_list_view.dart';
 
 class DoaViewBody extends StatelessWidget {
   const DoaViewBody({super.key});
@@ -8,15 +8,13 @@ class DoaViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Padding(
       padding: EdgeInsets.all(12),
-      child:  Column(
+      child: Column(
         children: [
-          DoaCard(),
+          Expanded(
+            child: DoaListView(),
+          )
         ],
       ),
     );
   }
 }
-
-
-
-

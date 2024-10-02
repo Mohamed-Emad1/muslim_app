@@ -4,6 +4,5 @@ class PrayerTimeEntity {
   final Timings prayerNamesAndTimes;
 
   final String location;
-  PrayerTimeEntity(
-      {required this.prayerNamesAndTimes, required this.location});
+  PrayerTimeEntity({required this.prayerNamesAndTimes, required this.location});
 }

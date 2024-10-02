@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:geolocator/geolocator.dart';
 import 'package:muslim_app/core/utils/functions/Location_handeler.dart';
 
-
 class LocationService {
   // This function will be called to get the latitude and longitude without any UI
   static Future<Position?> getCurrentLocation() async {

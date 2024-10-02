@@ -4,12 +4,18 @@ import 'date.dart';
 import 'meta.dart';
 import 'timings.dart';
 
-class PrayerTimesModel extends PrayerTimeEntity{
+class PrayerTimesModel extends PrayerTimeEntity {
   Timings? timings;
   Date? date;
   Meta? meta;
 
-  PrayerTimesModel({this.timings, this.date, this.meta}):super(prayerNamesAndTimes: timings!, location: meta?.timezone.toString().substring(meta.timezone.toString().indexOf("/") + 1 ) ?? '' );
+  PrayerTimesModel({this.timings, this.date, this.meta})
+      : super(
+            prayerNamesAndTimes: timings!,
+            location: meta?.timezone
+                    .toString()
+                    .substring(meta.timezone.toString().indexOf("/") + 1) ??
+                '');
 
   factory PrayerTimesModel.fromJson(Map<String, dynamic> json) {
     return PrayerTimesModel(

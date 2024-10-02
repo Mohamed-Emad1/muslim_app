@@ -4,7 +4,8 @@ import 'package:muslim_app/Features/home/presentation/views/widgets/prayers_time
 
 class PrayerTimesListView extends StatelessWidget {
   const PrayerTimesListView({
-    super.key, required this.prayerTimeEntity,
+    super.key,
+    required this.prayerTimeEntity,
   });
 
   final PrayerTimeEntity prayerTimeEntity;
@@ -17,13 +18,18 @@ class PrayerTimesListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 5,
         itemBuilder: (context, index) {
-          return  PrayerTimeCard(
-            prayerName: (index == 0) ? 'fajr' 
-    : (index == 1) ? 'dhuhr'
-    : (index == 2) ? 'asr' 
-    : (index == 3) ? 'maghrib'
-    : (index == 4) ? 'isha'
-    : '',
+          return PrayerTimeCard(
+            prayerName: (index == 0)
+                ? 'fajr'
+                : (index == 1)
+                    ? 'dhuhr'
+                    : (index == 2)
+                        ? 'asr'
+                        : (index == 3)
+                            ? 'maghrib'
+                            : (index == 4)
+                                ? 'isha'
+                                : '',
             time: (index == 0)
                 ? prayerTimeEntity.prayerNamesAndTimes.fajr ?? ''
                 : (index == 1)

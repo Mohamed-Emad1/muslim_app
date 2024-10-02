@@ -4,7 +4,8 @@ import '../../../../../core/utils/styles.dart';
 
 class LocationTitle extends StatelessWidget {
   const LocationTitle({
-    super.key, required this.location,
+    super.key,
+    required this.location,
   });
   final String location;
   @override
