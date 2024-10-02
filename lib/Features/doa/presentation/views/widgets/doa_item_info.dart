@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 import 'package:muslim_app/Features/doa/presentation/views/widgets/dua_info.dart';
 
+import '../../../../../core/utils/app_routes.dart';
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../../../core/widgets/custom_button.dart';
@@ -73,7 +75,9 @@ class DoaItemInfo extends StatelessWidget {
                 style: Styles.textStyle13.copyWith(color: ColorsStyles.black),
               ),
             ),
-            const ViewMoreButton(),
+            ViewMoreButton(
+              doa: doa,
+            ),
           ],
         ),
       ],
@@ -83,9 +87,9 @@ class DoaItemInfo extends StatelessWidget {
 
 class ViewMoreButton extends StatelessWidget {
   const ViewMoreButton({
-    super.key,
+    super.key, required this.doa,
   });
-
+  final DuaInfo doa;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -93,7 +97,7 @@ class ViewMoreButton extends StatelessWidget {
       child: CustomButton(
         text: "View more",
         onPressed: () {
-          
+          GoRouter.of(context).push(AppRoutes.kcardView,extra: doa);
         },
       ),
     );

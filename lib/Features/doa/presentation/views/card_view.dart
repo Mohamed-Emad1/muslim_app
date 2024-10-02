@@ -1,11 +1,17 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:muslim_app/Features/doa/presentation/views/widgets/card_view_body.dart';
+import 'package:muslim_app/Features/doa/presentation/views/widgets/dua_info.dart';
 
 class CardView extends StatelessWidget {
-  const CardView({super.key});
-
+  const CardView({super.key, required this.doa});
+  final DuaInfo doa;
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: CardViewBody(
+        doa: doa,
+      ),
+    );
   }
 }
