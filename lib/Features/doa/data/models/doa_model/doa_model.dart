@@ -1,11 +1,13 @@
+import 'package:muslim_app/Features/doa/data/entities/doa_entity.dart';
+
 import 'dua.dart';
 
-class DoaModel {
+class DoaModel extends DoaEntity{
   String? name;
   String? url;
   List<Dua>? duas;
 
-  DoaModel({this.name, this.url, this.duas});
+  DoaModel({this.name, this.url, this.duas}) :super(nameOfDoa: name!,dua: duas!);
 
   factory DoaModel.fromJson(Map<String, dynamic> json) => DoaModel(
         name: json['name'] as String?,
