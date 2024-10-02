@@ -13,7 +13,7 @@ class DoaCubit extends Cubit<DoaState> {
     emit(DoaLoading());
     var result = await doaRepo.getDoa();
     result.fold(
-      (failure) => emit(DoaFailed(failure.message)),
+      (failure) => emit(DoaFailure(failure.message)),
       (doas) => emit(DoaSuccess(doas)),
     );
   }

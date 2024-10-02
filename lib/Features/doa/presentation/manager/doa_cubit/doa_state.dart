@@ -11,8 +11,8 @@ final class DoaSuccess extends DoaState {
   DoaSuccess(this.doas);
   
 }
-final class DoaFailed extends DoaState {
+final class DoaFailure extends DoaState {
   final String errorMessage;
 
-  DoaFailed(this.errorMessage);
+  DoaFailure(this.errorMessage);
 }

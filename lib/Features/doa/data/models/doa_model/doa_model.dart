@@ -7,7 +7,7 @@ class DoaModel extends DoaEntity{
   String? url;
   List<Dua>? duas;
 
-  DoaModel({this.name, this.url, this.duas}) :super(nameOfDoa: name!,dua: duas!);
+  DoaModel({this.name, this.url, this.duas}) :super(nameOfDoa: name ?? 'No name',dua: duas ?? []);
 
   factory DoaModel.fromJson(Map<String, dynamic> json) => DoaModel(
         name: json['name'] as String?,
