@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:geolocator/geolocator.dart';
 import 'package:muslim_app/core/utils/functions/Location_handeler.dart';
 
@@ -10,7 +12,8 @@ class LocationService {
     position = await LocationHandler.getCurrentPosition();
     if (position != null) {
       // You can also get the address here if needed
-      // String? address = await LocationHandler.getAddressFromLatLng(position);
+      String? address = await LocationHandler.getAddressFromLatLng(position);
+      log(address.toString());
       // print(
       //     "Latitude: ${position.latitude}, Longitude: ${position.longitude}, Address: $address");
     } else {

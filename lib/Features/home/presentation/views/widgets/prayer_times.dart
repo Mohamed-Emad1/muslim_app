@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:muslim_app/Features/home/presentation/manager/prayer_times_cubit/prayer_times_cubit.dart';
 import 'package:muslim_app/Features/home/presentation/views/widgets/location_title.dart';
 import 'package:muslim_app/Features/home/presentation/views/widgets/prayer_times_list_view.dart';
+import 'package:muslim_app/core/widgets/custom_loading_indicator.dart';
+
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/widgets/custom_failure_message.dart';
 
@@ -11,6 +13,8 @@ class PrayerTimes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return BlocBuilder<PrayerTimesCubit, PrayerTimesState>(
       builder: (context, state) {
         if (state is PrayerTimesFailure) {
@@ -19,7 +23,7 @@ class PrayerTimes extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.only(right: 18, left: 18, top: 24),
             child: Container(
-              height: 147,
+              height: height * 0.18,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
@@ -35,8 +39,8 @@ class PrayerTimes extends StatelessWidget {
                       height: 7,
                     ),
                     Container(
-                      width: 160,
-                      height: 27,
+                      width: MediaQuery.of(context).size.width * 0.5,
+                      height: MediaQuery.of(context).size.height * 0.05,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         color: ColorsStyles.prayerTimesCard,
@@ -46,7 +50,7 @@ class PrayerTimes extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 18,
+                      height: 10,
                     ),
                     PrayerTimesListView(
                       prayerTimeEntity: state.prayerTimes[0],
@@ -57,8 +61,10 @@ class PrayerTimes extends StatelessWidget {
             ),
           );
         } else {
-          return const SizedBox(
-            height: 20,
+          return SizedBox(
+            height: height * 0.2,
+            width: width * .8,
+            child: const CustomLoadingIndicator(),
           );
         }
       },

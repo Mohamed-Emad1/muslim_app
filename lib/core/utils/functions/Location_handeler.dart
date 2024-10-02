@@ -32,7 +32,7 @@ abstract class LocationHandler {
       final hasPermission = await handleLocationPermission();
       if (!hasPermission) return null;
       return await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high,
+        desiredAccuracy: LocationAccuracy.bestForNavigation,
       );
     } catch (e) {
       return null;
