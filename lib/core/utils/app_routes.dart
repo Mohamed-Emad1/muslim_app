@@ -1,5 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:muslim_app/Features/doa/data/repos/doa_repo_implementation.dart';
+import 'package:muslim_app/Features/doa/presentation/manager/doa_cubit/doa_cubit.dart';
 import 'package:muslim_app/Features/doa/presentation/views/doa_view.dart';
 import 'package:muslim_app/Features/quran/data/repo/quran_repo_implementaion.dart';
 import 'package:muslim_app/Features/quran/presentation/manager/quran_cubit/quran_cubit.dart';
@@ -35,7 +37,12 @@ abstract class AppRoutes {
       ),
       GoRoute(
         path: kDoaView,
-        builder: (context, state) => const DoaView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => DoaCubit(
+            getIt.get<DoaRepoImplementation>()
+          ),
+          child: const DoaView(),
+        ),
       ),
     ],
   );

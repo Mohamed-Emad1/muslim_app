@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:muslim_app/Features/doa/data/local_repo.dart';
+import 'package:muslim_app/Features/doa/data/repos/doa_repo_implementation.dart';
 import 'package:muslim_app/Features/home/data/prayer_local_storage.dart';
 import 'package:muslim_app/Features/home/data/prayer_times_remote.dart';
 import 'package:muslim_app/Features/home/data/repos/prayer_repo_impl.dart';
@@ -32,5 +34,11 @@ void setupServiceLocator() {
         apiService: getIt<ApiService>(),
       ),
     ),
+  );
+
+  getIt.registerSingleton<DoaRepoImplementation>(
+      DoaRepoImplementation(
+        localRepo: LocalRepoImpl(),
+      ),
   );
 }
