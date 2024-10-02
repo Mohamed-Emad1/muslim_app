@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:muslim_app/Features/doa/presentation/views/widgets/card_view_body.dart';
 import 'package:muslim_app/Features/doa/presentation/views/widgets/dua_info.dart';
 
@@ -9,8 +8,10 @@ class CardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CardViewBody(
-        doa: doa,
+      body: SafeArea(
+        child: CardViewBody(
+          doa: doa,
+        ),
       ),
     );
   }

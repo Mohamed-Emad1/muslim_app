@@ -11,8 +11,14 @@ class DoaItemInfo extends StatelessWidget {
   const DoaItemInfo({
     super.key,
     required this.doa,
+    this.maxLines,
+    this.isViewMore,
+    this.overflow,
   });
   final DuaInfo doa;
+  final int? maxLines;
+  final bool? isViewMore;
+  final TextOverflow? overflow;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -39,29 +45,29 @@ class DoaItemInfo extends StatelessWidget {
         Align(
           alignment: Alignment.centerRight,
           child: Text(
-            overflow: TextOverflow.ellipsis,
-            maxLines: 3,
+            overflow: overflow ?? TextOverflow.visible,
+            maxLines: maxLines,
             doa.dua.arabic ?? 'No Doa',
-            style: Styles.textStyle13.copyWith(color: ColorsStyles.black),
+            style: Styles.textStyle15.copyWith(color: ColorsStyles.black),
           ),
         ),
         const SizedBox(
           height: 10,
         ),
         Text(
-          overflow: TextOverflow.ellipsis,
-          maxLines: 2,
+          overflow: overflow ?? TextOverflow.visible,
+          maxLines: maxLines,
           doa.dua.translation ?? 'No Doa',
-          style: Styles.textStyle13.copyWith(color: ColorsStyles.black),
+          style: Styles.textStyle15.copyWith(color: ColorsStyles.black),
         ),
         const SizedBox(
           height: 10,
         ),
         Text(
-          overflow: TextOverflow.ellipsis,
-          maxLines: 2,
+          overflow: overflow ?? TextOverflow.visible,
+          maxLines: maxLines,
           doa.dua.transliteration ?? 'No Doa',
-          style: Styles.textStyle13.copyWith(color: ColorsStyles.black),
+          style: Styles.textStyle15.copyWith(color: ColorsStyles.black),
         ),
         const Spacer(),
         Row(
@@ -70,14 +76,16 @@ class DoaItemInfo extends StatelessWidget {
             SizedBox(
               width: 150,
               child: Text(
-                overflow: TextOverflow.ellipsis,
+                overflow: overflow ?? TextOverflow.visible,
                 doa.dua.reference ?? 'No Refrence Found',
                 style: Styles.textStyle13.copyWith(color: ColorsStyles.black),
               ),
             ),
-            ViewMoreButton(
-              doa: doa,
-            ),
+            isViewMore == null || isViewMore == false
+                ? const SizedBox()
+                : ViewMoreButton(
+                    doa: doa,
+                  ),
           ],
         ),
       ],
@@ -87,7 +95,8 @@ class DoaItemInfo extends StatelessWidget {
 
 class ViewMoreButton extends StatelessWidget {
   const ViewMoreButton({
-    super.key, required this.doa,
+    super.key,
+    required this.doa,
   });
   final DuaInfo doa;
   @override
@@ -97,7 +106,7 @@ class ViewMoreButton extends StatelessWidget {
       child: CustomButton(
         text: "View more",
         onPressed: () {
-          GoRouter.of(context).push(AppRoutes.kcardView,extra: doa);
+          GoRouter.of(context).push(AppRoutes.kcardView, extra: doa);
         },
       ),
     );

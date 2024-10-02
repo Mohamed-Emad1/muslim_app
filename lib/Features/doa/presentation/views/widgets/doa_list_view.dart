@@ -28,6 +28,9 @@ class DoaListView extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 8, bottom: 8),
                   child: DoaCard(
+                    isViewMore: true,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                     doa: DuaInfo(
                             doaName: state.doas[index].nameOfDoa, dua: dua!),
                   ),
