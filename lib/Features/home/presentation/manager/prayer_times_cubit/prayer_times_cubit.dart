@@ -13,7 +13,7 @@ class PrayerTimesCubit extends Cubit<PrayerTimesState> {
       {required double latitude, required double longitude}) async {
     emit(PrayerTimesLoading());
     var result = await prayersRepo.getPrayerTimes(
-        latitude: 37.4219983, longitude: -122.084);
+        latitude: 30.033333, longitude: 31.233334);
     result.fold((failure) {
       emit(PrayerTimesFailure(failure.message));
     }, (prayerTimes) {

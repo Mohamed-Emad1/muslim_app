@@ -19,17 +19,18 @@ class PrayerRepoImpl extends PrayersRepo {
       {required this.prayersRepoRemote, required this.prayerLocalStorageImpl});
   @override
   Future<Either<Failure, List<PrayerTimeEntity>>> getPrayerTimes(
-      {required double latitude, required double longitude}) async {
+      {double latitude = 30.033333, double longitude = 31.233334}) async {
     try {
       // var result = prayerLocalStorageImpl.getPrayerTimes();
       List<PrayerTimeEntity> result = [];
       if (result.isEmpty) {
         log("before");
-        Position? position = await getLocation();
+        // Position? position = await getLocation();
+        // position.latitude = 30.0444
         log("after");
         var remoteResult = await prayersRepoRemote.getPrayerTimes(
           endPoint:
-              "?latitude=${position!.latitude}&longitude=${position.longitude}",
+              "?latitude=$latitude&longitude=$longitude",
         );
         return Right(remoteResult);
       } else {

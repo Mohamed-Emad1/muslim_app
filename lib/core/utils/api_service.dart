@@ -1,3 +1,7 @@
+
+
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:muslim_app/core/utils/functions/date_formatter.dart';
 
@@ -16,6 +20,7 @@ class ApiService {
 
   Future<Map<String, dynamic>> getPrayerTimes(
       {required String endPoint}) async {
+    log('$_basePrayerTimesURL$endPoint');
     var response = await _dio.get('$_basePrayerTimesURL$endPoint');
     return response.data;
   }

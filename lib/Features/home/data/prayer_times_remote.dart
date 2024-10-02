@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:muslim_app/Features/home/data/entities/prayer_time_entity.dart';
 import 'package:muslim_app/Features/home/data/models/prayer_times_model/prayer_times_model.dart';
 import 'package:muslim_app/core/utils/api_service.dart';
@@ -14,6 +16,7 @@ class PrayerTimesRemoteImpl implements PrayerTimesRemote {
   @override
   Future<List<PrayerTimeEntity>> getPrayerTimes(
       {required String endPoint}) async {
+    log(endPoint.toString());
     var response = await _apiService.getPrayerTimes(endPoint: endPoint);
 
     List<PrayerTimeEntity> prayerTimes = getPrayerTimesModel(response);
@@ -29,6 +32,7 @@ class PrayerTimesRemoteImpl implements PrayerTimesRemote {
     //   log(item.toString());
     //   prayerTimes.add(PrayerTimesModel.fromJson(item));
     // }
+    log(prayerTimes[0].location);
     return prayerTimes;
   }
 }

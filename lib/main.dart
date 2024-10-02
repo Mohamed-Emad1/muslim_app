@@ -32,7 +32,7 @@ class MuslimApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => PrayerTimesCubit(
         getIt.get<PrayerRepoImpl>(),
-      )..getPrayerTimes(latitude: 51.509865, longitude: -0.118092),
+      )..getPrayerTimes(latitude: 30.033333, longitude: 31.233334),
       child: MaterialApp.router(
         routerConfig: AppRoutes.router,
         debugShowCheckedModeBanner: false,
