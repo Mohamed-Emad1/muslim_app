@@ -26,9 +26,12 @@ class CustomGridView extends StatelessWidget {
           title: "Hadith",
           image: AssetsData.hadith,
         ),
-        const CustomCard(
+         CustomCard(
           title: "Doa",
           image: AssetsData.doa,
+          onTap: () {
+            GoRouter.of(context).push(AppRoutes.kDoaView);
+          },
         ),
         CustomCard(
           title: "Qu'ran",
