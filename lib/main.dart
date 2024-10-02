@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:muslim_app/Features/home/data/repos/prayer_repo_impl.dart';
 import 'package:muslim_app/Features/home/presentation/manager/prayer_times_cubit/prayer_times_cubit.dart';
@@ -31,7 +30,9 @@ class MuslimApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => PrayerTimesCubit(getIt.get<PrayerRepoImpl>(),)..getPrayerTimes(latitude: 51.509865, longitude: -0.118092),
+      create: (context) => PrayerTimesCubit(
+        getIt.get<PrayerRepoImpl>(),
+      )..getPrayerTimes(latitude: 51.509865, longitude: -0.118092),
       child: MaterialApp.router(
         routerConfig: AppRoutes.router,
         debugShowCheckedModeBanner: false,
