@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:muslim_app/Features/home/presentation/manager/prayer_times_cubit/prayer_times_cubit.dart';
 import 'package:muslim_app/Features/home/presentation/views/widgets/location_title.dart';
 import 'package:muslim_app/Features/home/presentation/views/widgets/prayer_times_list_view.dart';
-import 'package:muslim_app/core/widgets/custom_loading_indicator.dart';
-
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/widgets/custom_failure_message.dart';
 
@@ -50,7 +48,9 @@ class PrayerTimes extends StatelessWidget {
                     const SizedBox(
                       height: 18,
                     ),
-                    const PrayerTimesListView(),
+                    PrayerTimesListView(
+                      prayerTimeEntity: state.prayerTimes[0],
+                    ),
                   ],
                 ),
               ),

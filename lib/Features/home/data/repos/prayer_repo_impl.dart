@@ -31,7 +31,6 @@ class PrayerRepoImpl extends PrayersRepo {
           endPoint:
               "?latitude=${position!.latitude}&longitude=${position.longitude}",
         );
-        // await quranRepoLocalStorage.saveSurahs(remoteResult);
         return Right(remoteResult);
       } else {
         // log("iam in hive");

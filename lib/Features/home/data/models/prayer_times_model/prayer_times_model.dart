@@ -9,7 +9,7 @@ class PrayerTimesModel extends PrayerTimeEntity{
   Date? date;
   Meta? meta;
 
-  PrayerTimesModel({this.timings, this.date, this.meta}):super(prayerNamesAndTimes: timings!, location: meta?.timezone.toString().substring(meta.timezone.toString().indexOf("/") ) ?? '' );
+  PrayerTimesModel({this.timings, this.date, this.meta}):super(prayerNamesAndTimes: timings!, location: meta?.timezone.toString().substring(meta.timezone.toString().indexOf("/") + 1 ) ?? '' );
 
   factory PrayerTimesModel.fromJson(Map<String, dynamic> json) {
     return PrayerTimesModel(

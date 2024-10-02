@@ -1,3 +1,4 @@
+
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:muslim_app/Features/home/data/entities/prayer_time_entity.dart';
@@ -11,7 +12,7 @@ class PrayerTimesCubit extends Cubit<PrayerTimesState> {
 
   Future<void> getPrayerTimes({required double latitude, required double longitude}) async {
     emit(PrayerTimesLoading());
-    var result = await prayersRepo.getPrayerTimes(latitude: latitude, longitude: longitude);
+    var result = await prayersRepo.getPrayerTimes(latitude: 37.4219983, longitude: -122.084);
     result.fold((failure) {
       emit(PrayerTimesFailure(failure.message));
     }, (prayerTimes) {
