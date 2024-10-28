@@ -28,7 +28,10 @@ class DoaItemInfo extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             doa.doaName,
-            style: Styles.textStyle19.copyWith(color: ColorsStyles.black),
+            style: Styles.textStyle19.copyWith(
+                color: isViewMore ?? false
+                    ? ColorsStyles.black
+                    : ColorsStyles.white),
           ),
         ),
         const SizedBox(
@@ -36,7 +39,10 @@ class DoaItemInfo extends StatelessWidget {
         ),
         Text(
           doa.dua.title ?? 'No Title',
-          style: Styles.textStyle16.copyWith(color: ColorsStyles.black),
+          style: Styles.textStyle16.copyWith(
+              color: isViewMore ?? false
+                  ? ColorsStyles.black
+                  : ColorsStyles.white),
           textAlign: TextAlign.start,
         ),
         const SizedBox(
@@ -48,7 +54,10 @@ class DoaItemInfo extends StatelessWidget {
             overflow: overflow ?? TextOverflow.visible,
             maxLines: maxLines,
             doa.dua.arabic ?? 'No Doa',
-            style: Styles.textStyle15.copyWith(color: ColorsStyles.black),
+            style: Styles.textStyle15.copyWith(
+                color: isViewMore ?? false
+                    ? ColorsStyles.black
+                    : ColorsStyles.white),
           ),
         ),
         const SizedBox(
@@ -58,7 +67,10 @@ class DoaItemInfo extends StatelessWidget {
           overflow: overflow ?? TextOverflow.visible,
           maxLines: maxLines,
           doa.dua.translation ?? 'No Doa',
-          style: Styles.textStyle15.copyWith(color: ColorsStyles.black),
+          style: Styles.textStyle15.copyWith(
+              color: isViewMore ?? false
+                  ? ColorsStyles.black
+                  : ColorsStyles.white),
         ),
         const SizedBox(
           height: 10,
@@ -67,7 +79,10 @@ class DoaItemInfo extends StatelessWidget {
           overflow: overflow ?? TextOverflow.visible,
           maxLines: maxLines,
           doa.dua.transliteration ?? 'No Doa',
-          style: Styles.textStyle15.copyWith(color: ColorsStyles.black),
+          style: Styles.textStyle15.copyWith(
+              color: isViewMore ?? false
+                  ? ColorsStyles.black
+                  : ColorsStyles.white),
         ),
         const Spacer(),
         Row(
@@ -78,11 +93,16 @@ class DoaItemInfo extends StatelessWidget {
               child: Text(
                 overflow: overflow ?? TextOverflow.visible,
                 doa.dua.reference ?? 'No Refrence Found',
-                style: Styles.textStyle13.copyWith(color: ColorsStyles.black),
+                style: Styles.textStyle13.copyWith(
+                    color: isViewMore ?? false
+                        ? ColorsStyles.black
+                        : ColorsStyles.white),
               ),
             ),
             isViewMore == null || isViewMore == false
-                ? const SizedBox()
+                ? const SizedBox(
+                    height: 170,
+                  )
                 : ViewMoreButton(
                     doa: doa,
                   ),
